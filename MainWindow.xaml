@@ -8,9 +8,22 @@
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_File"/>
-            <MenuItem Header="_Settings"/>
-            <MenuItem Header="_Help"/>
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open"/>
+                <MenuItem Header="_Delete"/>
+                <Separator/>
+                <MenuItem Header="_Exit"/>
+            </MenuItem>
+            
+            <MenuItem Header="_Settings">
+                <MenuItem Header="_Themes"/>
+                <MenuItem Header="_Preferences"/>
+            </MenuItem>
+            
+            <MenuItem Header="_Help">
+                <MenuItem Header="_Tutorial"/>
+                <MenuItem Header="_Get help online"/>
+            </MenuItem>
         </Menu>
     </DockPanel>
 </Window>
