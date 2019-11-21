@@ -10,5 +10,9 @@
 
     <DockPanel>
         <UserControls:MainMenuBar/>
+
+        <Image>
+            
+        </Image>
     </DockPanel>
 </Window>

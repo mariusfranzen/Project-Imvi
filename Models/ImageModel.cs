@@ -13,6 +13,33 @@ namespace Project_Imvi.Models
 
     public class MainImage : INotifyPropertyChanged
     {
+        private Uri imageUri;
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void RaisePropertyChanged(string property)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            }
+        }
+
+        public Uri ImageUri
+        {
+            get
+            {
+                return imageUri;
+            }
+
+            set
+            {
+                if (imageUri != value)
+                {
+                    imageUri = value;
+                    RaisePropertyChanged("ImageUri");
+                }
+            }
+        }
     }
 }
