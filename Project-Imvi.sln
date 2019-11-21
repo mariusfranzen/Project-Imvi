@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project-Imvi", "Project-Imvi.csproj", "{F3162274-3FD9-431E-B0B7-F00EAADFE929}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3162274-3FD9-431E-B0B7-F00EAADFE929}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3162274-3FD9-431E-B0B7-F00EAADFE929}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3162274-3FD9-431E-B0B7-F00EAADFE929}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3162274-3FD9-431E-B0B7-F00EAADFE929}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F72DD68C-BEB0-4AA5-A043-AC654A919279}
+	EndGlobalSection
+EndGlobal
