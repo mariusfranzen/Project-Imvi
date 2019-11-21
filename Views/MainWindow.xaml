@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Project_Imvi"
         xmlns:UserControls="clr-namespace:Project_Imvi.UserControls"
+        xmlns:ViewModels="clr-namespace:Project_Imvi.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
     <DockPanel>
-        <UserControls:MainMenuBar/>
+        <UserControls:MainMenuBar DockPanel.Dock="Top"/>
 
-        <Image>
-            
-        </Image>
+        <Image Source="{Binding Image.ImageUri}" x:Name="XMainImage"/>
+        
     </DockPanel>
 </Window>

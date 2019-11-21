@@ -23,6 +23,7 @@ namespace Project_Imvi
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new Project_Imvi.ViewModels.ImageViewModel();
         }
     }
 }
