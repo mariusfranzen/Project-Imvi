@@ -8,11 +8,14 @@
         xmlns:ViewModels="clr-namespace:Project_Imvi.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <ViewModels:ImageViewModel/>
+    </Window.DataContext>
 
     <DockPanel>
         <UserControls:MainMenuBar DockPanel.Dock="Top"/>
 
         <Image Source="{Binding Image.ImageUri}" x:Name="XMainImage"/>
-        
+
     </DockPanel>
 </Window>

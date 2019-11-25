@@ -2,28 +2,21 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Imaging;
 
 namespace Project_Imvi.Models
 {
-    class ImageModel
+    public class ImageModel
     {
     }
 
     public class MainImage : INotifyPropertyChanged
     {
         private Uri imageUri;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        private void RaisePropertyChanged(string property)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-            }
-        }
+        private BitmapImage imageBitmap;
 
         public Uri ImageUri
         {
@@ -37,9 +30,33 @@ namespace Project_Imvi.Models
                 if (imageUri != value)
                 {
                     imageUri = value;
-                    RaisePropertyChanged("ImageUri");
+                    RaisePropertyChanged();
                 }
             }
+        }
+
+        public BitmapImage ImageBitmap
+        {
+            get
+            {
+                return imageBitmap;
+            }
+
+            set
+            {
+                if (imageBitmap != value)
+                {
+                    imageBitmap = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void RaisePropertyChanged([CallerMemberName] string property = "")
+        {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
     }
 }
