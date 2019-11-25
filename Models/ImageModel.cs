@@ -12,7 +12,7 @@ namespace Project_Imvi.Models
     public class ImageModel
     {
     }
-
+    //Class that contains image properties and implements INPC to notify view of changing properties
     public class MainImage : INotifyPropertyChanged
     {
         private Uri imageUri;
@@ -51,7 +51,7 @@ namespace Project_Imvi.Models
                 }
             }
         }
-
+        //INPC members. The PropertyChangedEventHandler handles the event raised when a property changes
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged([CallerMemberName] string property = "")

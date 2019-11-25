@@ -15,7 +15,7 @@ namespace Project_Imvi.ViewModels
 {
     public class ImageViewModel : INotifyPropertyChanged
     {
-
+        //ICommands that utilizes ICommands.cs to respond to commands from the view
         #region ICommands
         public ICommand OpenCommand { get; set; }
         public ICommand ExitCommand { get; set; }
@@ -33,11 +33,12 @@ namespace Project_Imvi.ViewModels
 
         public void ExecuteOpenCommand(object parameter)
         {
-            OpenFileDialog openDialog = new OpenFileDialog();
-
-            openDialog.DefaultExt = "*.*";
-            openDialog.FilterIndex = 5;
-            openDialog.Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|All Files (*.*)|*.*";
+            OpenFileDialog openDialog = new OpenFileDialog
+            {
+                DefaultExt = "*.*",
+                FilterIndex = 5,
+                Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|All Files (*.*)|*.*"
+            };
 
             Nullable<bool> result = openDialog.ShowDialog();
 
