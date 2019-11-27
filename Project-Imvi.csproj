@@ -67,7 +67,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ICommands.cs" />
+    <Compile Include="ImageClasses\ICommands.cs" />
+    <Compile Include="ImageClasses\ZoomBorder.cs" />
     <Compile Include="Models\ImageModel.cs" />
     <Compile Include="UserControls\MainMenuBar.xaml.cs">
       <DependentUpon>MainMenuBar.xaml</DependentUpon>
