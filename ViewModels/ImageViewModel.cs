@@ -7,9 +7,10 @@ using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using Microsoft.Win32;
 using System.Collections.ObjectModel;
-using Project_Imvi.Models;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Project_Imvi.Models;
+using Project_Imvi.Views;
 
 namespace Project_Imvi.ViewModels
 {
@@ -19,11 +20,13 @@ namespace Project_Imvi.ViewModels
         #region ICommands
         public ICommand OpenCommand { get; set; }
         public ICommand ExitCommand { get; set; }
+        public ICommand OpenSettingsCommand { get; set; }
 
         public ImageViewModel()
         {
             this.OpenCommand = new ICommands(ExecuteOpenCommand, CanExecuteOpenCommand);
             this.ExitCommand = new ICommands(ExecuteExitCommand, CanExecuteExitCommand);
+            this.OpenSettingsCommand = new ICommands(ExecuteOpenSettingsCommand, CanExecuteOpenSettingsCommand);
         }
 
         public bool CanExecuteOpenCommand(object parameter)
@@ -57,6 +60,17 @@ namespace Project_Imvi.ViewModels
         public void ExecuteExitCommand(object parameter)
         {
 
+        }
+
+        public bool CanExecuteOpenSettingsCommand(object parameter)
+        {
+            return true; //TODO: Can execute settings command?
+        }
+
+        public void ExecuteOpenSettingsCommand(object parameter)
+        {
+            SettingsWindow settingsWindow = new SettingsWindow();
+            settingsWindow.Show();
         }
 
         #endregion
