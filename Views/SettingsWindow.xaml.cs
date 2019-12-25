@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Project_Imvi.ViewModels;
+using Project_Imvi.Models;
 
 namespace Project_Imvi.Views
 {
@@ -19,9 +21,18 @@ namespace Project_Imvi.Views
     /// </summary>
     public partial class SettingsWindow : Window
     {
+        private SettingsViewModel viewModel = new SettingsViewModel();
         public SettingsWindow()
         {
             InitializeComponent();
+            DataContext = viewModel;
+        }
+
+        private void BackgroundColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            string HexCode = BackgroundColorPicker.SelectedColor.ToString();
+            viewModel.SetBackgroundColor(HexCode);
+
         }
     }
 }

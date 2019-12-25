@@ -10,19 +10,21 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Project_Imvi.Models;
+using Project_Imvi.ViewModels;
 using Project_Imvi.Views;
 
 namespace Project_Imvi.ViewModels
 {
-    public class ImageViewModel : INotifyPropertyChanged
+    public class MainViewModel : INotifyPropertyChanged
     {
+
         //ICommands that utilizes ICommands.cs to respond to commands from the view
         #region ICommands
         public ICommand OpenCommand { get; set; }
         public ICommand ExitCommand { get; set; }
         public ICommand OpenSettingsCommand { get; set; }
 
-        public ImageViewModel()
+        public MainViewModel()
         {
             this.OpenCommand = new ICommands(ExecuteOpenCommand, CanExecuteOpenCommand);
             this.ExitCommand = new ICommands(ExecuteExitCommand, CanExecuteExitCommand);
@@ -74,6 +76,7 @@ namespace Project_Imvi.ViewModels
         }
 
         #endregion
+
         private MainImage _Image;
         public MainImage Image
         {
@@ -83,8 +86,11 @@ namespace Project_Imvi.ViewModels
             }
             set
             {
-                _Image = value;
-                RaisePropertyChanged();
+                if (_Image != value)
+                {
+                    _Image = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 

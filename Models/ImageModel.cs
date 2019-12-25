@@ -51,12 +51,13 @@ namespace Project_Imvi.Models
                 }
             }
         }
+
         //INPC members. The PropertyChangedEventHandler handles the event raised when a property changes
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged([CallerMemberName] string property = "")
         {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
     }
 }
