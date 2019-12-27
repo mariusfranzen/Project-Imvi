@@ -6,16 +6,18 @@
         xmlns:local="clr-namespace:Project_Imvi"
         xmlns:UserControls="clr-namespace:Project_Imvi.UserControls"
         xmlns:ViewModels="clr-namespace:Project_Imvi.ViewModels"
+        xmlns:Models="clr-namespace:Project_Imvi.Models"
         xmlns:ImageClasses="clr-namespace:Project_Imvi.ImageClasses"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized">
+
     <Window.DataContext>
-        <ViewModels:ImageViewModel/>
+        <ViewModels:MainViewModel/>
     </Window.DataContext>
 
-    <DockPanel>
+    <DockPanel Background="{Binding Source={x:Static Models:CoreModel.Instance}, Path=BackgroundColorHex}">
         <UserControls:MainMenuBar DockPanel.Dock="Top"/>
 
         <ImageClasses:ZoomBorder ClipToBounds="True">
