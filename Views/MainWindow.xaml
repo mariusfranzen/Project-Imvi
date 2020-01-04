@@ -19,10 +19,11 @@
 
     <DockPanel Background="{Binding Source={x:Static Models:CoreModel.Instance}, Path=BackgroundColorHex}">
         <UserControls:MainMenuBar DockPanel.Dock="Top"/>
+        <UserControls:NavigationBar DockPanel.Dock="Bottom"/>
 
         <ImageClasses:ZoomBorder ClipToBounds="True">
             <Image Source="{Binding Image.ImageUri}"/>
         </ImageClasses:ZoomBorder>
-        
+
     </DockPanel>
 </Window>
