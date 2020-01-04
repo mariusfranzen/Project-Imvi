@@ -22,9 +22,26 @@ namespace Project_Imvi
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainViewModel _MainViewModel = new MainViewModel();
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = _MainViewModel;
         }
+
+        public MainWindow(string file)
+        {
+            InitializeComponent();
+            try
+            {
+                _MainViewModel.LoadImage(new Uri(file));
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Error: " + e, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            DataContext = _MainViewModel;
+        }
+
     }
 }

@@ -94,19 +94,13 @@ namespace Project_Imvi.ViewModels
             }
         }
 
-        private void LoadImage(Uri imageUri)
+        public void LoadImage(Uri imageUri)
         {
             MainImage image = new MainImage();
+            Console.WriteLine(imageUri.ToString());
 
-            if (false /*Loaded through "open with"*/)
-            {
-                //TODO: code for "open with"
-            }
-            else
-            {
-                image.ImageUri = imageUri;
-                image.ImageBitmap = new BitmapImage(imageUri);
-            }
+            image.ImageUri = imageUri;
+            image.ImageBitmap = new BitmapImage(imageUri);
             Image = image;
         }
 
